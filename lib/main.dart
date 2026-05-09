@@ -1,3 +1,5 @@
+import 'package:doctor_app/main_layout.dart';
+import 'package:doctor_app/screens/auth_page.dart';
 import 'package:doctor_app/utils/config.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'yea',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+
         // pre-define input decoration
         inputDecorationTheme: const InputDecorationTheme(
           focusColor: Config.primaryColor,
@@ -28,6 +31,7 @@ class MyApp extends StatelessWidget {
           floatingLabelStyle: TextStyle(color: Config.primaryColor),
           prefixIconColor: Colors.black38,
         ),
+
         scaffoldBackgroundColor: Colors.white,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Config.primaryColor,
@@ -38,28 +42,16 @@ class MyApp extends StatelessWidget {
           elevation: 10,
           type: BottomNavigationBarType.fixed
         ),
+        
       ),
 
       // initial route of the app
       initialRoute: '/',
       routes: {
-        '/' : (context) => const
+        '/' : (context) => const AuthPage(),
+        // main layout after login
+        'main': (context) => const MainLayout(),
       },
-      home: MyHomePage(),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Flutter Doctor App')));
   }
 }
