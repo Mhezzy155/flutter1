@@ -8,11 +8,13 @@ class Button extends StatelessWidget {
     required this.title,
     required this.disable,
     required this.onPressed,
+    required this.padding,
   }) : super(key: key);
 
   final double width;
   final String title;
   final bool disable;
+  final EdgeInsets padding;
   final Function() onPressed;
 
   @override
@@ -22,16 +24,14 @@ class Button extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: Config.primaryColor,
-          foregroundColor: Colors.white
+          foregroundColor: Colors.white,
+          padding: padding
         ),
         onPressed: disable ? null : onPressed,
         child: Text(
           title,
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold
-          ),
-        )
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
