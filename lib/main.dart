@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'yea',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        useMaterial3: false,
 
         // pre-define input decoration
         inputDecorationTheme: const InputDecorationTheme(
