@@ -54,11 +54,7 @@ class _LoginFormState extends State<LoginForm> {
                   });
                 },
                 icon: obsecurePass
-                    ? 
-                    Icon(
-                      Icons.visibility_off_outlined, 
-                      color: Colors.black
-                    )
+                    ? Icon(Icons.visibility_off_outlined, color: Colors.black)
                     : Icon(
                         Icons.visibility_outlined,
                         color: Config.primaryColor,
@@ -68,10 +64,12 @@ class _LoginFormState extends State<LoginForm> {
           ),
           Config.smallSpacing,
           Button(
-            width: double.infinity, 
-            title: 'Sign In', 
-            disable: false, 
-            onPressed: (){},
+            width: double.infinity,
+            title: 'Sign In',
+            disable: false,
+            onPressed: () {
+              Navigator.of(context).pushNamed('main');
+            },
             padding: EdgeInsets.all(15),
           ),
         ],
