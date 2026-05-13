@@ -12,6 +12,14 @@ class Config {
     screenWidth = mediaQueryData!.size.height;
   }
 
+  static get widthSize {
+    return screenWidth;
+  }
+
+  static get heightSize {
+    return screenHeight;
+  }
+
   // spacing height
   static const smallSpacing = SizedBox(height: 25);
   static final mediumSpacing = SizedBox(height: screenHeight! * 0.5);
